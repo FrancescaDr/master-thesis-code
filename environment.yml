@@ -1,0 +1,4 @@
+name: pytorch
+channels:
+  - defaults
+prefix: /home/nfs/fdrummer/.conda/envs/pytorch

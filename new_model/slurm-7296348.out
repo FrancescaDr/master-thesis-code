@@ -1,0 +1,110 @@
+Global seed set to 0
+{'func': 'train_model', 'dataset_path': '../data/czi_data.h5ad', 'model_type': 'MMVAE', 'cat_cov_keys': ['annotation_L1', 'group', 'condition'], 'test_split': None, 'ood_condition': None, 'train_size': 0.8, 'subset_data': None, 'subset_PG': None, 'subset_AD': None, 'n_hvg': 5000, 'seed': 0, 'hparams': {'vae_n_hidden': 128, 'vae_n_latent': 20, 'vae_n_layers': 2, 'vae_dropout': 0.1, 'vae_lr': 0.0001, 'vae_wd': 1e-06, 'batch_size': 128, 'gene_likelihood': 'nb'}, 'max_epochs': 400, 'check_val_every_n_epoch': 20, 'save_dir': '..', 'save_model': True, 'save_anndata': True, 'sweep_seeds': 200, 'model_name': '20220522-190512'}
+Encode covariates: True, Cat_cov: [8, 3, 2]
+TotalVI Model with the following params: 
+n_latent: 20, n_hidden 128, n_layers: 2, gene_likelihood: nb, dropout_rate: 0.1. 
+Training conditions: 
+Categorical covariates: ['annotation_L1', 'group', 'condition'], Subset data: None (on PG: None and ADJ: None).
+Traceback (most recent call last):
+  File "../src_trainer/main.py", line 112, in <module>
+    evaluate_model(args['filename'], args['model_type'], args['n_sample'], args['sample_dist'])
+  File "../src_trainer/main.py", line 93, in evaluate_model
+    evaluate_corr(my_model, sample_dist=sample_dist, eval_hvg=True, save_df=True)
+  File "/tudelft.net/staff-bulk/ewi/insy/DBL/fdrummer/master_thesis/src_trainer/plotting.py", line 635, in evaluate_corr
+    common_hvg = len(compare_hvg(recon_adata=recon_adata, org_adata=data, n_top_genes=1000))
+  File "/tudelft.net/staff-bulk/ewi/insy/DBL/fdrummer/master_thesis/src_trainer/plotting.py", line 135, in compare_hvg
+    span=1.0,
+  File "/home/nfs/fdrummer/.local/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py", line 427, in highly_variable_genes
+    inplace=inplace,
+  File "/home/nfs/fdrummer/.local/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py", line 85, in _highly_variable_genes_seurat_v3
+    model.fit()
+  File "_loess.pyx", line 899, in _loess.loess.fit
+ValueError: b'There are other near singularities as well. 0.49346\n'
+srun: error: insy12: task 0: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=7296348.0
+Global seed set to 0
+{'func': 'train_model', 'dataset_path': '../data/czi_data.h5ad', 'model_type': 'MMVAE', 'cat_cov_keys': ['annotation_L1', 'condition'], 'test_split': None, 'ood_condition': None, 'train_size': 0.8, 'subset_data': None, 'subset_PG': None, 'subset_AD': None, 'n_hvg': 5000, 'seed': 0, 'hparams': {'vae_n_hidden': 128, 'vae_n_latent': 20, 'vae_n_layers': 2, 'vae_dropout': 0.1, 'vae_lr': 0.0001, 'vae_wd': 1e-06, 'batch_size': 128, 'gene_likelihood': 'nb'}, 'max_epochs': 400, 'check_val_every_n_epoch': 20, 'save_dir': '..', 'save_model': True, 'save_anndata': True, 'sweep_seeds': 200, 'model_name': '20220522-200228'}
+Encode covariates: True, Cat_cov: [8, 2]
+TotalVI Model with the following params: 
+n_latent: 20, n_hidden 128, n_layers: 2, gene_likelihood: nb, dropout_rate: 0.1. 
+Training conditions: 
+Categorical covariates: ['annotation_L1', 'condition'], Subset data: None (on PG: None and ADJ: None).
+Traceback (most recent call last):
+  File "../src_trainer/main.py", line 112, in <module>
+    evaluate_model(args['filename'], args['model_type'], args['n_sample'], args['sample_dist'])
+  File "../src_trainer/main.py", line 93, in evaluate_model
+    evaluate_corr(my_model, sample_dist=sample_dist, eval_hvg=True, save_df=True)
+  File "/tudelft.net/staff-bulk/ewi/insy/DBL/fdrummer/master_thesis/src_trainer/plotting.py", line 635, in evaluate_corr
+    common_hvg = len(compare_hvg(recon_adata=recon_adata, org_adata=data, n_top_genes=1000))
+  File "/tudelft.net/staff-bulk/ewi/insy/DBL/fdrummer/master_thesis/src_trainer/plotting.py", line 135, in compare_hvg
+    span=1.0,
+  File "/home/nfs/fdrummer/.local/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py", line 427, in highly_variable_genes
+    inplace=inplace,
+  File "/home/nfs/fdrummer/.local/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py", line 85, in _highly_variable_genes_seurat_v3
+    model.fit()
+  File "_loess.pyx", line 899, in _loess.loess.fit
+ValueError: b'There are other near singularities as well. 0.82375\n'
+srun: error: insy12: task 0: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=7296348.1
+Global seed set to 0
+[34mINFO    [0m Computing empirical prior initialization for protein background.       
+INFO:scvi.model._totalvi:Computing empirical prior initialization for protein background.
+Initalised own init
+[34mINFO    [0m Computing empirical prior initialization for protein background.       
+INFO:scvi.model._totalvi:Computing empirical prior initialization for protein background.
+TotalVI Model with the following params: 
+n_latent: 20, gene_dispersion: gene, protein_dispersion: protein, gene_likelihood: nb, latent_distribution: normal. 
+Training conditions: 
+Categorical covariates: ['annotation_L1', 'group'], Subset data: None (on PG: None and ADJ: None).
+    PG        CT     ADJ  ...  common_hvg            model  num_cells
+0   DK         B      PI  ...         318  20220522-134423        701
+1   DK         B  medium  ...         325  20220522-134423        701
+2   DK      CD4T      PI  ...         382  20220522-134423       3194
+3   DK      CD4T  medium  ...         366  20220522-134423       3194
+4   DK      CD8T      PI  ...         344  20220522-134423       2401
+5   DK      CD8T  medium  ...         343  20220522-134423       2401
+6   DK        DC      PI  ...         480  20220522-134423        202
+7   DK        DC  medium  ...         475  20220522-134423        202
+8   DK  Monocyte      PI  ...         528  20220522-134423       1330
+9   DK  Monocyte  medium  ...         542  20220522-134423       1330
+10  DK        NK      PI  ...         293  20220522-134423        869
+11  DK        NK  medium  ...         295  20220522-134423        869
+12  DK    OtherT      PI  ...         330  20220522-134423       2057
+13  DK    OtherT  medium  ...         344  20220522-134423       2057
+14  DK  Platelet      PI  ...         326  20220522-134423         94
+15  DK  Platelet  medium  ...         323  20220522-134423         94
+16  LD         B      PI  ...         301  20220522-134423        568
+17  LD         B  medium  ...         309  20220522-134423        568
+18  LD      CD4T      PI  ...         366  20220522-134423       4286
+19  LD      CD4T  medium  ...         380  20220522-134423       4286
+20  LD      CD8T      PI  ...         340  20220522-134423       2087
+21  LD      CD8T  medium  ...         347  20220522-134423       2087
+22  LD        DC      PI  ...         472  20220522-134423        167
+23  LD        DC  medium  ...         461  20220522-134423        167
+24  LD  Monocyte      PI  ...         529  20220522-134423       1338
+25  LD  Monocyte  medium  ...         538  20220522-134423       1338
+26  LD        NK      PI  ...         301  20220522-134423       1164
+27  LD        NK  medium  ...         292  20220522-134423       1164
+28  LD    OtherT      PI  ...         270  20220522-134423        409
+29  LD    OtherT  medium  ...         255  20220522-134423        409
+30  LD  Platelet      PI  ...         273  20220522-134423         51
+31  LD  Platelet  medium  ...         287  20220522-134423         51
+32  RT         B      PI  ...         305  20220522-134423        534
+33  RT         B  medium  ...         292  20220522-134423        534
+34  RT      CD4T      PI  ...         360  20220522-134423       2142
+35  RT      CD4T  medium  ...         361  20220522-134423       2142
+36  RT      CD8T      PI  ...         303  20220522-134423        773
+37  RT      CD8T  medium  ...         298  20220522-134423        773
+38  RT        DC      PI  ...         421  20220522-134423         97
+39  RT        DC  medium  ...         419  20220522-134423         97
+40  RT  Monocyte      PI  ...         498  20220522-134423        517
+41  RT  Monocyte  medium  ...         492  20220522-134423        517
+42  RT        NK      PI  ...         304  20220522-134423       1359
+43  RT        NK  medium  ...         295  20220522-134423       1359
+44  RT    OtherT      PI  ...         248  20220522-134423        226
+45  RT    OtherT  medium  ...         251  20220522-134423        226
+46  RT  Platelet      PI  ...         267  20220522-134423         50
+47  RT  Platelet  medium  ...         268  20220522-134423         50
+
+[48 rows x 10 columns]
+save df
