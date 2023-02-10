@@ -8,7 +8,7 @@ Supervisors: Dr. Ahmed Mahfouz and Mikhael Manurung
 
 ## Package Structure
 
-The repository is centered around the scr\_trainer module in the `new\_model` folder:
+The repository is centered around the scr\_trainer module in the new_model folder:
 
 - `src\_trainer.main` contains training and evaluation functions 
 - `src\_trainer.preprocessing` contains data preprocessing 
